@@ -125,11 +125,20 @@ h1, h2, h3, h4 { font-family: 'Poppins', system-ui, sans-serif; line-height: 1.2
 .brand--light .brand-text small { color: rgba(255,255,255,.7); }
 .brand--light .brand-mark { background: rgba(255,255,255,.12); color: var(--coral); }
 
-.nav-menu { display: flex; align-items: center; gap: 8px; }
-.nav-menu a { padding: 10px 16px; border-radius: 999px; font-weight: 600; color: var(--slate); transition: color .2s, background .2s; }
+.nav-menu { display: flex; align-items: center; gap: 4px; }
+.nav-menu a {
+  font-family: 'Poppins', sans-serif;
+  padding: 10px 16px; border-radius: 999px;
+  font-weight: 500; font-size: .96rem; letter-spacing: .01em;
+  color: var(--ink); transition: color .2s, background .2s;
+}
 .nav-menu a:hover { color: var(--teal-700); background: var(--teal-50); }
-.nav-cta { background: var(--teal-700); color: #fff !important; }
-.nav-cta:hover { background: var(--teal-900) !important; }
+.nav-cta {
+  font-weight: 600 !important;
+  background: linear-gradient(135deg, var(--teal-600), var(--teal-700)); color: #fff !important;
+  box-shadow: 0 6px 16px rgba(20,128,122,.25);
+}
+.nav-cta:hover { background: linear-gradient(135deg, var(--teal-700), var(--teal-900)) !important; box-shadow: 0 8px 20px rgba(20,128,122,.35); }
 
 .nav-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: 0; cursor: pointer; padding: 8px; }
 .nav-toggle span { width: 24px; height: 2px; background: var(--ink); border-radius: 2px; transition: .3s; }
