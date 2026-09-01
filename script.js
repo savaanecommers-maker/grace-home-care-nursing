@@ -250,11 +250,13 @@
 
   // ===== Gallery: build from asset list =====
   var galleryFiles = [
-    'home care nursing services.webp', 'care giving.webp', 'old age home care.webp',
+    'ceo taking award.jpeg', 'home care nursing services.webp', 'care giving.webp',
+    'Elederly care.jpeg', 'elderly care 2.jpeg', 'old age home care.webp',
     'personal care.webp', 'Icu setup.webp', 'grace home care services to the NRI.webp',
     'care take service.webp', 'home care services to the Indian Navy.webp',
     'best home care services in vizag.webp', 'home care nursing.webp',
     'home care services in vizag.webp', 'NRI services in vizag.webp',
+    '1.jpeg', '2.jpeg', '3.jpeg', '5.jpeg', '6.jpeg',
     'unnamed.webp', 'unnamed (1).webp', 'unnamed (2).webp', 'unnamed (3).webp',
     'unnamed (4).webp', 'unnamed (5).webp', 'unnamed (6).webp', 'unnamed (7).webp',
     'unnamed (8).webp', 'unnamed (9).webp', 'unnamed (10).webp', 'unnamed (11).webp',
@@ -273,9 +275,23 @@
     'unnamed (60).webp', 'unnamed (61).webp', 'unnamed (62).webp'
   ];
 
+  var captionMap = {
+    'ceo taking award': 'Chairman Receiving an Award',
+    'Elederly care': 'Elderly Care',
+    'elderly care 2': 'Elderly Care',
+    'home care nursing services': 'Home Care Nursing',
+    'grace home care services to the NRI': 'NRI Family Care',
+    'home care services to the Indian Navy': 'Serving the Indian Navy',
+    'best home care services in vizag': 'Trusted in Vizag',
+    'Icu setup': 'Home ICU Setup',
+    'care take service': 'Care Taker Service',
+    'care giving': 'Compassionate Caregiving'
+  };
+
   function prettyCaption(file) {
-    var base = file.replace(/\.webp$/i, '');
-    if (/^unnamed/i.test(base)) return 'Grace Home Care';
+    var base = file.replace(/\.(webp|jpe?g|png)$/i, '');
+    if (captionMap[base]) return captionMap[base];
+    if (/^unnamed/i.test(base) || /^\d+$/.test(base)) return 'Grace Home Care';
     return base.replace(/\b\w/g, function (c) { return c.toUpperCase(); });
   }
 
