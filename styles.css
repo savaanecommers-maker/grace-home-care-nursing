@@ -156,13 +156,23 @@ h1, h2, h3, h4 { font-family: 'Poppins', system-ui, sans-serif; line-height: 1.2
 }
 .hero-inner { display: grid; grid-template-columns: 1.1fr .9fr; gap: 48px; align-items: center; }
 .eyebrow {
-  display: inline-block; font-weight: 700; font-size: .82rem;
-  letter-spacing: .14em; text-transform: uppercase; color: var(--teal-700);
-  background: var(--teal-50); padding: 6px 14px; border-radius: 999px; margin-bottom: 18px;
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: 'Poppins', sans-serif; font-weight: 700; font-size: .8rem;
+  letter-spacing: .12em; text-transform: uppercase; color: var(--teal-700);
+  background: linear-gradient(135deg, var(--teal-50), #d9f0ee);
+  border: 1px solid rgba(20,128,122,.16);
+  padding: 7px 16px; border-radius: 999px; margin-bottom: 18px;
+}
+.eyebrow::before {
+  content: ""; width: 7px; height: 7px; border-radius: 50%;
+  background: var(--coral); box-shadow: 0 0 0 3px rgba(244,129,107,.25);
 }
 .hero h1 {
-  font-size: clamp(2.2rem, 5vw, 3.4rem); color: var(--teal-900);
-  margin-bottom: 10px; min-height: 1.2em;
+  font-size: clamp(2.3rem, 5vw, 3.5rem); font-weight: 800;
+  margin-bottom: 12px; min-height: 1.2em; line-height: 1.12;
+  background: linear-gradient(120deg, var(--teal-900) 0%, var(--teal-600) 55%, var(--teal-500) 100%);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent; color: var(--teal-900);
 }
 .type-caret {
   display: inline-block; width: 3px; height: 1em; margin-left: 4px;
@@ -173,13 +183,21 @@ h1, h2, h3, h4 { font-family: 'Poppins', system-ui, sans-serif; line-height: 1.2
 
 /* rotating hero quote */
 .hero-quote {
-  min-height: 1.7em; margin-bottom: 18px;
-  font-family: 'Inter', sans-serif; font-style: italic; font-weight: 500;
-  font-size: clamp(1rem, 1.8vw, 1.2rem); color: var(--teal-700);
+  min-height: 1.7em; margin-bottom: 20px;
+  font-family: 'Poppins', sans-serif; font-weight: 600;
+  font-size: clamp(1.05rem, 2vw, 1.32rem); line-height: 1.35;
+  letter-spacing: -0.01em;
+  background: linear-gradient(120deg, var(--coral-dark) 0%, var(--coral) 45%, var(--teal-500) 110%);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent; color: var(--coral-dark);
   transition: opacity .5s ease; opacity: 1;
 }
 .hero-quote.fade { opacity: 0; }
-.lead { font-size: 1.12rem; color: var(--slate); max-width: 52ch; margin-bottom: 28px; }
+.lead {
+  font-size: clamp(1.02rem, 0.98rem + 0.3vw, 1.14rem);
+  color: var(--slate); max-width: 52ch; margin-bottom: 28px; line-height: 1.75;
+}
+.lead strong { color: var(--teal-700); font-weight: 700; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 32px; }
 .hero-badges { display: flex; flex-wrap: wrap; gap: 24px; }
 .hero-badges li { font-size: .92rem; color: var(--slate); font-weight: 600; }
