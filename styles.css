@@ -63,6 +63,19 @@ h1, h2, h3, h4 { font-family: 'Poppins', system-ui, sans-serif; line-height: 1.2
 .btn-light { background: #fff; color: var(--teal-700); }
 .btn-light:hover { background: var(--teal-50); }
 .btn-block { width: 100%; }
+/* Form submit button — rich gradient */
+.btn-submit {
+  color: #fff; font-weight: 700; font-size: 1.05rem; padding: 16px 28px;
+  background: linear-gradient(120deg, var(--teal-600) 0%, var(--teal-500) 45%, var(--coral) 130%);
+  background-size: 160% 100%; background-position: 0% 0%;
+  box-shadow: 0 10px 24px rgba(20,128,122,.32);
+  transition: background-position .5s ease, box-shadow .3s ease, transform .2s ease;
+}
+.btn-submit:hover {
+  background-position: 100% 0%;
+  box-shadow: 0 14px 30px rgba(244,129,107,.4);
+  transform: translateY(-2px);
+}
 /* WhatsApp button — vibrant green */
 .btn-whatsapp {
   gap: 10px; color: #fff; font-weight: 700; letter-spacing: -0.01em;
