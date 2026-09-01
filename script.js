@@ -1,0 +1,378 @@
+(function () {
+  'use strict';
+
+  // ===== Mobile navigation toggle =====
+  var toggle = document.querySelector('.nav-toggle');
+  var menu = document.getElementById('nav-menu');
+
+  if (toggle && menu) {
+    toggle.addEventListener('click', function () {
+      var open = menu.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', String(open));
+    });
+
+    // Close menu when a link is clicked (mobile)
+    menu.addEventListener('click', function (e) {
+      if (e.target.tagName === 'A' && menu.classList.contains('open')) {
+        menu.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+
+  // ===== Dynamic footer year =====
+  var yearEl = document.getElementById('year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  // ===== Years of experience (founded 2022) =====
+  var foundedYear = 2022;
+  var years = new Date().getFullYear() - foundedYear;
+  if (years < 1) years = 1;
+  ['expYears', 'expYearsBadge'].forEach(function (id) {
+    var el = document.getElementById(id);
+    if (el) el.textContent = years;
+  });
+
+  // ===== Hero typing effect (cycles through multiple phrases) =====
+  var typedEl = document.getElementById('typed');
+  var heroPrefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (typedEl) {
+    var phrases = [
+      'Empowering Care, Enriching Lives',
+      'Compassionate Home Nursing',
+      'Care That Feels Like Family',
+      'Your Health, Our Priority'
+    ];
+
+    if (heroPrefersReduced) {
+      typedEl.textContent = phrases[0];
+      startQuotes();
+    } else {
+      var pIndex = 0;
+      var charIndex = 0;
+      var deleting = false;
+      var typeSpeed = 70;      // ms per character while typing
+      var deleteSpeed = 40;    // ms per character while deleting
+      var holdFull = 1600;     // pause when a phrase is fully typed
+      var holdEmpty = 300;     // pause before typing next phrase
+
+      startQuotes(); // quotes run independently below
+
+      (function cycle() {
+        var current = phrases[pIndex];
+        if (!deleting) {
+          typedEl.textContent = current.slice(0, charIndex);
+          charIndex++;
+          if (charIndex > current.length) {
+            deleting = true;
+            setTimeout(cycle, holdFull);
+            return;
+          }
+          setTimeout(cycle, typeSpeed);
+        } else {
+          typedEl.textContent = current.slice(0, charIndex);
+          charIndex--;
+          if (charIndex < 0) {
+            deleting = false;
+            charIndex = 0;
+            pIndex = (pIndex + 1) % phrases.length;
+            setTimeout(cycle, holdEmpty);
+            return;
+          }
+          setTimeout(cycle, deleteSpeed);
+        }
+      })();
+    }
+  } else {
+    startQuotes();
+  }
+
+  // ===== Rotating hero quotes =====
+  function startQuotes() {
+    var quoteEl = document.getElementById('heroQuote');
+    if (!quoteEl) return;
+    var quotes = [
+      'Compassionate care where you call home.',
+      'We treat every patient like family.',
+      'Your health is our priority, every single day.',
+      'Trusted by 255+ families across Vizag.',
+      'Skilled nurses, right at your doorstep.',
+      'Caring hands, healing hearts.'
+    ];
+    var qi = 0;
+
+    function showQuote() {
+      quoteEl.textContent = '“' + quotes[qi] + '”';
+      quoteEl.classList.remove('fade');
+    }
+
+    showQuote();
+
+    if (heroPrefersReduced) return; // no rotation for reduced motion
+
+    setInterval(function () {
+      quoteEl.classList.add('fade');
+      setTimeout(function () {
+        qi = (qi + 1) % quotes.length;
+        showQuote();
+      }, 500);
+    }, 3200);
+  }
+
+  // ===== Scroll reveal =====
+  var revealTargets = document.querySelectorAll(
+    '.card, .why-item, .testimonial, .stat, .about-copy, .about-visual, .contact-info, .contact-form, .section-head, .chairman-card, .step, .gallery-item'
+  );
+  revealTargets.forEach(function (el) { el.classList.add('reveal'); });
+
+  if ('IntersectionObserver' in window) {
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          // stagger siblings within the same grid for a cascading effect
+          var el = entry.target;
+          var siblings = Array.prototype.slice.call(el.parentNode.children);
+          var idx = siblings.indexOf(el);
+          var delay = Math.min(idx, 6) * 80;
+          el.style.transitionDelay = delay + 'ms';
+          el.classList.add('visible');
+          observer.unobserve(el);
+        }
+      });
+    }, { threshold: 0.12 });
+    revealTargets.forEach(function (el) { observer.observe(el); });
+  } else {
+    revealTargets.forEach(function (el) { el.classList.add('visible'); });
+  }
+
+  // ===== Contact form validation =====
+  var form = document.getElementById('contactForm');
+  var status = document.getElementById('formStatus');
+
+  function isEmail(v) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+  }
+
+  if (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      status.textContent = '';
+      status.className = 'form-status';
+
+      var name = form.name;
+      var phone = form.phone;
+      var email = form.email;
+      var valid = true;
+
+      [name, phone, email].forEach(function (f) { f.classList.remove('invalid'); });
+
+      if (!name.value.trim()) { name.classList.add('invalid'); valid = false; }
+      if (!phone.value.trim()) { phone.classList.add('invalid'); valid = false; }
+      if (!isEmail(email.value.trim())) { email.classList.add('invalid'); valid = false; }
+
+      if (!valid) {
+        status.textContent = 'Please fill in your name, phone, and a valid email.';
+        status.classList.add('error');
+        return;
+      }
+
+      // Simulated successful submission (no backend)
+      status.textContent = 'Thank you! We received your request. For urgent care, call us at +91 63010 52929.';
+      status.classList.add('success');
+      form.reset();
+    });
+  }
+
+  // ===== Header shadow + scroll progress + back-to-top =====
+  var header = document.querySelector('.site-header');
+  var progress = document.getElementById('scrollProgress');
+  var topBtn = document.getElementById('scrollTop');
+
+  function onScroll() {
+    var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    var pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+
+    if (progress) progress.style.width = pct + '%';
+    if (header) header.classList.toggle('scrolled', scrollTop > 10);
+    if (topBtn) topBtn.classList.toggle('show', scrollTop > 500);
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  if (topBtn) {
+    topBtn.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  // ===== Animated count-up for stats =====
+  var stats = document.querySelectorAll('.stat-num');
+
+  function animateCount(el) {
+    var raw = el.textContent.trim();
+    var match = raw.match(/([\d.]+)/);
+    if (!match) return; // non-numeric (e.g., "No:1", "7 Days") - leave as is
+    var target = parseFloat(match[1]);
+    var suffix = raw.slice(match.index + match[1].length);
+    var prefix = raw.slice(0, match.index);
+    var isDecimal = match[1].indexOf('.') !== -1;
+    var duration = 1400;
+    var startTime = null;
+
+    function step(ts) {
+      if (!startTime) startTime = ts;
+      var p = Math.min((ts - startTime) / duration, 1);
+      var eased = 1 - Math.pow(1 - p, 3);
+      var val = target * eased;
+      el.textContent = prefix + (isDecimal ? val.toFixed(1) : Math.round(val)) + suffix;
+      if (p < 1) requestAnimationFrame(step);
+      else el.textContent = raw;
+    }
+    requestAnimationFrame(step);
+  }
+
+  var prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if ('IntersectionObserver' in window && !prefersReduced) {
+    var statObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          animateCount(entry.target);
+          statObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+    stats.forEach(function (el) { statObserver.observe(el); });
+  }
+
+  // ===== Gallery: build from asset list =====
+  var galleryFiles = [
+    'home care nursing services.webp', 'care giving.webp', 'old age home care.webp',
+    'personal care.webp', 'Icu setup.webp', 'grace home care services to the NRI.webp',
+    'care take service.webp', 'home care services to the Indian Navy.webp',
+    'best home care services in vizag.webp', 'home care nursing.webp',
+    'home care services in vizag.webp', 'NRI services in vizag.webp',
+    'unnamed.webp', 'unnamed (1).webp', 'unnamed (2).webp', 'unnamed (3).webp',
+    'unnamed (4).webp', 'unnamed (5).webp', 'unnamed (6).webp', 'unnamed (7).webp',
+    'unnamed (8).webp', 'unnamed (9).webp', 'unnamed (10).webp', 'unnamed (11).webp',
+    'unnamed (12).webp', 'unnamed (13).webp', 'unnamed (14).webp', 'unnamed (15).webp',
+    'unnamed (16).webp', 'unnamed (17).webp', 'unnamed (18).webp', 'unnamed (19).webp',
+    'unnamed (20).webp', 'unnamed (21).webp', 'unnamed (22).webp', 'unnamed (23).webp',
+    'unnamed (24).webp', 'unnamed (25).webp', 'unnamed (26).webp', 'unnamed (27).webp',
+    'unnamed (28).webp', 'unnamed (29).webp', 'unnamed (30).webp', 'unnamed (31).webp',
+    'unnamed (32).webp', 'unnamed (33).webp', 'unnamed (34).webp', 'unnamed (35).webp',
+    'unnamed (36).webp', 'unnamed (37).webp', 'unnamed (38).webp', 'unnamed (39).webp',
+    'unnamed (40).webp', 'unnamed (41).webp', 'unnamed (42).webp', 'unnamed (43).webp',
+    'unnamed (44).webp', 'unnamed (45).webp', 'unnamed (46).webp', 'unnamed (47).webp',
+    'unnamed (48).webp', 'unnamed (49).webp', 'unnamed (50).webp', 'unnamed (51).webp',
+    'unnamed (52).webp', 'unnamed (53).webp', 'unnamed (54).webp', 'unnamed (55).webp',
+    'unnamed (56).webp', 'unnamed (57).webp', 'unnamed (58).webp', 'unnamed (59).webp',
+    'unnamed (60).webp', 'unnamed (61).webp', 'unnamed (62).webp'
+  ];
+
+  function prettyCaption(file) {
+    var base = file.replace(/\.webp$/i, '');
+    if (/^unnamed/i.test(base)) return 'Grace Home Care';
+    return base.replace(/\b\w/g, function (c) { return c.toUpperCase(); });
+  }
+
+  var galleryGrid = document.getElementById('galleryGrid');
+  var galleryMoreBtn = document.getElementById('galleryMore');
+  var galleryMoreWrap = galleryMoreBtn ? galleryMoreBtn.parentNode : null;
+  var GALLERY_BATCH = 12;
+  var galleryShown = 0;
+
+  function renderGalleryBatch() {
+    if (!galleryGrid) return;
+    var end = Math.min(galleryShown + GALLERY_BATCH, galleryFiles.length);
+    for (var i = galleryShown; i < end; i++) {
+      var file = galleryFiles[i];
+      var fig = document.createElement('figure');
+      fig.className = 'gallery-item';
+      var img = document.createElement('img');
+      img.src = 'assets/' + encodeURIComponent(file);
+      img.alt = prettyCaption(file);
+      img.loading = 'lazy';
+      var cap = document.createElement('figcaption');
+      cap.textContent = prettyCaption(file);
+      fig.appendChild(img);
+      fig.appendChild(cap);
+      galleryGrid.appendChild(fig);
+    }
+    galleryShown = end;
+    if (galleryShown >= galleryFiles.length && galleryMoreWrap) {
+      galleryMoreWrap.classList.add('hidden');
+    }
+    bindGalleryItems();
+  }
+
+  if (galleryGrid) {
+    renderGalleryBatch();
+    if (galleryMoreBtn) {
+      galleryMoreBtn.addEventListener('click', renderGalleryBatch);
+    }
+  }
+
+  // ===== Gallery lightbox =====
+  var galleryItems = [];
+  function bindGalleryItems() {
+    galleryItems = Array.prototype.slice.call(document.querySelectorAll('.gallery-item img'));
+    galleryItems.forEach(function (img, i) {
+      if (img.dataset.lbBound) return;
+      img.dataset.lbBound = '1';
+      img.parentNode.addEventListener('click', function () { openLightbox(galleryItems.indexOf(img)); });
+    });
+  }
+  var lightbox = document.getElementById('lightbox');
+  var lbImg = document.getElementById('lightboxImg');
+  var lbCaption = document.getElementById('lightboxCaption');
+  var lbClose = document.getElementById('lightboxClose');
+  var lbPrev = document.getElementById('lightboxPrev');
+  var lbNext = document.getElementById('lightboxNext');
+  var currentIndex = 0;
+
+  function showImage(i) {
+    if (i < 0) i = galleryItems.length - 1;
+    if (i >= galleryItems.length) i = 0;
+    currentIndex = i;
+    var img = galleryItems[i];
+    lbImg.src = img.src;
+    lbImg.alt = img.alt;
+    var fig = img.closest('.gallery-item');
+    var cap = fig ? fig.querySelector('figcaption') : null;
+    lbCaption.textContent = cap ? cap.textContent : img.alt;
+  }
+
+  function openLightbox(i) {
+    showImage(i);
+    lightbox.classList.add('open');
+    lightbox.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove('open');
+    lightbox.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  if (lightbox) {
+    if (lbClose) lbClose.addEventListener('click', closeLightbox);
+    if (lbPrev) lbPrev.addEventListener('click', function () { showImage(currentIndex - 1); });
+    if (lbNext) lbNext.addEventListener('click', function () { showImage(currentIndex + 1); });
+
+    lightbox.addEventListener('click', function (e) {
+      if (e.target === lightbox) closeLightbox();
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (!lightbox.classList.contains('open')) return;
+      if (e.key === 'Escape') closeLightbox();
+      else if (e.key === 'ArrowLeft') showImage(currentIndex - 1);
+      else if (e.key === 'ArrowRight') showImage(currentIndex + 1);
+    });
+  }
+})();
