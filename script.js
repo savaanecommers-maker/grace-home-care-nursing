@@ -336,10 +336,16 @@
   var galleryItems = [];
   function bindGalleryItems() {
     galleryItems = Array.prototype.slice.call(document.querySelectorAll('.gallery-item img'));
-    galleryItems.forEach(function (img, i) {
-      if (img.dataset.lbBound) return;
-      img.dataset.lbBound = '1';
-      img.parentNode.addEventListener('click', function () { openLightbox(galleryItems.indexOf(img)); });
+  }
+  // event delegation: one listener on the grid handles all (current + future) items
+  if (galleryGrid) {
+    galleryGrid.addEventListener('click', function (e) {
+      var fig = e.target.closest('.gallery-item');
+      if (!fig) return;
+      var img = fig.querySelector('img');
+      var idx = galleryItems.indexOf(img);
+      if (idx === -1) { bindGalleryItems(); idx = galleryItems.indexOf(img); }
+      if (idx !== -1) openLightbox(idx);
     });
   }
   var lightbox = document.getElementById('lightbox');

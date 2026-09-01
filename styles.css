@@ -838,12 +838,12 @@ h1, h2, h3, h4 { font-family: 'Poppins', system-ui, sans-serif; line-height: 1.2
 .gallery-more { text-align: center; margin-top: 32px; }
 .gallery-more.hidden { display: none; }
 .gallery-item::after {
-  content: ""; position: absolute; inset: 0;
+  content: ""; position: absolute; inset: 0; pointer-events: none;
   background: linear-gradient(to top, rgba(15,76,76,.75), transparent 55%);
   opacity: 0; transition: opacity .35s ease;
 }
 .gallery-item figcaption {
-  position: absolute; left: 16px; bottom: 14px; z-index: 2;
+  position: absolute; left: 16px; bottom: 14px; z-index: 2; pointer-events: none;
   color: #fff; font-weight: 700; font-size: .98rem;
   opacity: 0; transform: translateY(10px);
   transition: opacity .35s ease, transform .35s ease;
