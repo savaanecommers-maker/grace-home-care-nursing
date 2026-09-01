@@ -736,9 +736,10 @@ h1, h2, h3, h4 { font-family: 'Poppins', system-ui, sans-serif; line-height: 1.2
   font-family: Georgia, serif; font-size: 9rem; line-height: 1;
   color: rgba(255,255,255,.08);
 }
+.chairman-media { display: flex; gap: 16px; flex-shrink: 0; }
 .chairman-avatar {
-  width: 200px; height: 260px; flex-shrink: 0;
-  border-radius: 20px; overflow: hidden;
+  width: 175px; height: 240px; flex-shrink: 0;
+  border-radius: 18px; overflow: hidden;
   border: 3px solid rgba(255,255,255,.18);
   box-shadow: 0 12px 30px rgba(0,0,0,.25);
 }
@@ -747,6 +748,24 @@ h1, h2, h3, h4 { font-family: 'Poppins', system-ui, sans-serif; line-height: 1.2
   transition: transform .6s ease;
 }
 .chairman-avatar:hover img { transform: scale(1.06); }
+.chairman-award {
+  position: relative; width: 175px; height: 240px; flex-shrink: 0;
+  border-radius: 18px; overflow: hidden; margin: 0;
+  border: 3px solid rgba(255,255,255,.18);
+  box-shadow: 0 12px 30px rgba(0,0,0,.25);
+}
+.chairman-award img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform .6s ease;
+}
+.chairman-award:hover img { transform: scale(1.06); }
+.chairman-award figcaption {
+  position: absolute; left: 0; right: 0; bottom: 0;
+  padding: 22px 12px 10px; text-align: center;
+  font-family: 'Poppins', sans-serif; font-weight: 600; font-size: .82rem; color: #fff;
+  background: linear-gradient(to top, rgba(15,76,76,.9), transparent);
+}
+.award-icon { font-size: .9rem; }
 .chairman-body .eyebrow {
   background: rgba(255,255,255,.14); color: #fff;
 }
@@ -762,8 +781,12 @@ h1, h2, h3, h4 { font-family: 'Poppins', system-ui, sans-serif; line-height: 1.2
 
 @media (max-width: 760px) {
   .chairman-card { grid-template-columns: 1fr; gap: 24px; padding: 36px 28px; text-align: center; }
-  .chairman-avatar { margin: 0 auto; width: 200px; height: 260px; }
+  .chairman-media { justify-content: center; }
   .chairman-quote p { font-size: 1.1rem; }
+}
+@media (max-width: 420px) {
+  .chairman-media { flex-direction: column; align-items: center; }
+  .chairman-avatar, .chairman-award { width: 100%; max-width: 260px; height: 220px; }
 }
 
 /* ===== How It Works ===== */
