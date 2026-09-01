@@ -257,6 +257,7 @@
     'best home care services in vizag.webp', 'home care nursing.webp',
     'home care services in vizag.webp', 'NRI services in vizag.webp',
     '1.jpeg', '2.jpeg', '3.jpeg', '5.jpeg', '6.jpeg',
+    '10.jpeg', '13.jpeg', '15.jpeg', '17.jpeg', '19.jpeg', '21.jpeg', '23.jpeg',
     'unnamed.webp', 'unnamed (1).webp', 'unnamed (2).webp', 'unnamed (3).webp',
     'unnamed (4).webp', 'unnamed (5).webp', 'unnamed (6).webp', 'unnamed (7).webp',
     'unnamed (8).webp', 'unnamed (9).webp', 'unnamed (10).webp', 'unnamed (11).webp',
