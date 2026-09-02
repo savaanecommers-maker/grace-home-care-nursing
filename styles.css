@@ -717,9 +717,10 @@ h1, h2, h3, h4 { font-family: 'Poppins', system-ui, sans-serif; line-height: 1.2
   .stats-grid { grid-template-columns: 1fr; gap: 22px; }
 }
 
-/* ===== Reveal animation ===== */
-.reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
-.reveal.visible { opacity: 1; transform: none; }
+/* ===== Reveal animation =====
+   Content is visible by default. Only hidden when <html class="js-anim"> is set
+   by JS (so if JS fails/slow, nothing is ever invisible). */
+.reveal { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .reveal { opacity: 1; transform: none; transition: none; }
@@ -839,9 +840,9 @@ h1, h2, h3, h4 { font-family: 'Poppins', system-ui, sans-serif; line-height: 1.2
 }
 .nav-menu a:not(.nav-cta):hover::after { transform: scaleX(1); }
 
-/* --- Smoother reveal with slight scale --- */
-.reveal { opacity: 0; transform: translateY(16px); transition: opacity .45s ease, transform .45s cubic-bezier(.2,.7,.3,1); }
-.reveal.visible { opacity: 1; transform: none; }
+/* --- Smoother reveal with slight scale (only when JS animation is active) --- */
+.js-anim .reveal { opacity: 0; transform: translateY(16px); transition: opacity .45s ease, transform .45s cubic-bezier(.2,.7,.3,1); }
+.js-anim .reveal.visible { opacity: 1; transform: none; }
 
 /* --- Section head gradient accent line --- */
 .section-head h2 { position: relative; display: inline-block; }

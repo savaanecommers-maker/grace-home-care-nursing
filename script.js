@@ -138,6 +138,8 @@
     // no animation on mobile / reduced motion — everything visible immediately
     revealAll();
   } else {
+    // enable JS-driven animation only now that we know JS is running & supported
+    document.documentElement.classList.add('js-anim');
     revealTargets.forEach(function (el) { el.classList.add('reveal'); });
 
     var observer = new IntersectionObserver(function (entries) {
