@@ -203,14 +203,14 @@ h1, h2, h3, h4 { font-family: 'Poppins', system-ui, sans-serif; line-height: 1.2
 .hero-badges li { font-size: .92rem; color: var(--slate); font-weight: 600; }
 .hero-badges span { display: block; font-size: 1.35rem; color: var(--teal-700); font-weight: 800; }
 
-.hero-visual { position: relative; min-height: 420px; }
+.hero-visual { position: relative; }
 /* main photo */
 .hero-photo-wrap {
-  position: relative; width: 88%; margin-left: auto;
+  position: relative; width: 100%;
   border-radius: 28px; overflow: visible;
 }
 .hero-photo {
-  width: 100%; aspect-ratio: 4/4.4; object-fit: cover;
+  width: 100%; aspect-ratio: 4/3; object-fit: cover;
   border-radius: 28px; box-shadow: var(--shadow-lg);
   border: 6px solid #fff;
 }
