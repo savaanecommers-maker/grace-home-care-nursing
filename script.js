@@ -130,17 +130,20 @@
     var observer = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
-          // stagger siblings within the same grid for a cascading effect
+          // small stagger for a subtle cascade (capped low to avoid lag)
           var el = entry.target;
           var siblings = Array.prototype.slice.call(el.parentNode.children);
           var idx = siblings.indexOf(el);
-          var delay = Math.min(idx, 6) * 80;
+          var delay = Math.min(idx, 4) * 45;
           el.style.transitionDelay = delay + 'ms';
           el.classList.add('visible');
           observer.unobserve(el);
         }
       });
-    }, { threshold: 0.12 });
+    }, {
+      threshold: 0,
+      rootMargin: '0px 0px -12% 0px'
+    });
     revealTargets.forEach(function (el) { observer.observe(el); });
   } else {
     revealTargets.forEach(function (el) { el.classList.add('visible'); });
