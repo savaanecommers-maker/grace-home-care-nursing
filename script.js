@@ -209,18 +209,39 @@
   var progress = document.getElementById('scrollProgress');
   var topBtn = document.getElementById('scrollTop');
 
-  function onScroll() {
+  var scrollTicking = false;
+  var lastScrolled = null;
+  var lastTop = null;
+
+  function updateScroll() {
+    scrollTicking = false;
     var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
     var docHeight = document.documentElement.scrollHeight - window.innerHeight;
     var pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
 
     if (progress) progress.style.width = pct + '%';
-    if (header) header.classList.toggle('scrolled', scrollTop > 10);
-    if (topBtn) topBtn.classList.toggle('show', scrollTop > 500);
+
+    var isScrolled = scrollTop > 10;
+    if (header && isScrolled !== lastScrolled) {
+      header.classList.toggle('scrolled', isScrolled);
+      lastScrolled = isScrolled;
+    }
+    var showTop = scrollTop > 500;
+    if (topBtn && showTop !== lastTop) {
+      topBtn.classList.toggle('show', showTop);
+      lastTop = showTop;
+    }
+  }
+
+  function onScroll() {
+    if (!scrollTicking) {
+      scrollTicking = true;
+      window.requestAnimationFrame(updateScroll);
+    }
   }
 
   window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
+  updateScroll();
 
   if (topBtn) {
     topBtn.addEventListener('click', function () {
@@ -319,7 +340,7 @@
   var galleryGrid = document.getElementById('galleryGrid');
   var galleryMoreBtn = document.getElementById('galleryMore');
   var galleryMoreWrap = galleryMoreBtn ? galleryMoreBtn.parentNode : null;
-  var GALLERY_BATCH = 12;
+  var GALLERY_BATCH = 8;
   var galleryShown = 0;
 
   function renderGalleryBatch() {
