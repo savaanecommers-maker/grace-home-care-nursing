@@ -111,13 +111,14 @@
 
     if (heroPrefersReduced) return; // no rotation for reduced motion
 
+    // gentle, slower crossfade so it reads as an elegant transition (not a blink)
     setInterval(function () {
       quoteEl.classList.add('fade');
       setTimeout(function () {
         qi = (qi + 1) % quotes.length;
         showQuote();
-      }, 500);
-    }, 3200);
+      }, 700);
+    }, 5000);
   }
 
   // ===== Scroll reveal (fail-safe) =====
