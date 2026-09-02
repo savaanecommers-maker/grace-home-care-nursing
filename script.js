@@ -398,4 +398,40 @@
       else if (e.key === 'ArrowRight') showImage(currentIndex + 1);
     });
   }
+
+  // ===== Service detail modals =====
+  var openServiceModal = null;
+
+  function closeServiceModal() {
+    if (!openServiceModal) return;
+    openServiceModal.classList.remove('open');
+    openServiceModal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    openServiceModal = null;
+  }
+
+  // open triggers (buttons with data-modal)
+  document.querySelectorAll('[data-modal]').forEach(function (trigger) {
+    trigger.addEventListener('click', function () {
+      var modal = document.getElementById(trigger.getAttribute('data-modal'));
+      if (!modal) return;
+      modal.classList.add('open');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      openServiceModal = modal;
+    });
+  });
+
+  // close triggers + backdrop click
+  document.querySelectorAll('.service-modal').forEach(function (modal) {
+    modal.addEventListener('click', function (e) {
+      if (e.target === modal || e.target.closest('[data-modal-close]')) {
+        closeServiceModal();
+      }
+    });
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeServiceModal();
+  });
 })();
