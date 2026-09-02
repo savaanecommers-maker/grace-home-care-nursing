@@ -36,6 +36,9 @@
   // ===== Hero typing effect (cycles through multiple phrases) =====
   var typedEl = document.getElementById('typed');
   var heroPrefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // treat small screens / touch devices as "no heavy animation" to prevent flicker
+  var isMobile = window.matchMedia && window.matchMedia('(max-width: 820px)').matches;
+  var noAnim = heroPrefersReduced || isMobile;
 
   if (typedEl) {
     var phrases = [
@@ -45,8 +48,10 @@
       'Your Health, Our Priority'
     ];
 
-    if (heroPrefersReduced) {
+    if (noAnim) {
       typedEl.textContent = phrases[0];
+      var caret = document.querySelector('.type-caret');
+      if (caret) caret.style.display = 'none';
       startQuotes();
     } else {
       var pIndex = 0;
@@ -109,7 +114,7 @@
 
     showQuote();
 
-    if (heroPrefersReduced) return; // no rotation for reduced motion
+    if (noAnim) return; // no rotation on mobile / reduced motion
 
     // gentle, slower crossfade so it reads as an elegant transition (not a blink)
     setInterval(function () {
@@ -125,14 +130,12 @@
   var revealTargets = Array.prototype.slice.call(document.querySelectorAll(
     '.card, .why-item, .testimonial, .stat, .about-copy, .about-visual, .contact-info, .contact-form, .section-head, .chairman-card, .step, .gallery-item'
   ));
-  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
   function revealAll() {
     revealTargets.forEach(function (el) { el.classList.add('visible'); });
   }
 
-  if (!('IntersectionObserver' in window) || reduceMotion) {
-    // no animation — everything visible immediately
+  if (!('IntersectionObserver' in window) || noAnim) {
+    // no animation on mobile / reduced motion — everything visible immediately
     revealAll();
   } else {
     revealTargets.forEach(function (el) { el.classList.add('reveal'); });
