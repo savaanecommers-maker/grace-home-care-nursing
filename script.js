@@ -120,33 +120,46 @@
     }, 3200);
   }
 
-  // ===== Scroll reveal =====
-  var revealTargets = document.querySelectorAll(
+  // ===== Scroll reveal (fail-safe) =====
+  var revealTargets = Array.prototype.slice.call(document.querySelectorAll(
     '.card, .why-item, .testimonial, .stat, .about-copy, .about-visual, .contact-info, .contact-form, .section-head, .chairman-card, .step, .gallery-item'
-  );
-  revealTargets.forEach(function (el) { el.classList.add('reveal'); });
+  ));
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  if ('IntersectionObserver' in window) {
+  function revealAll() {
+    revealTargets.forEach(function (el) { el.classList.add('visible'); });
+  }
+
+  if (!('IntersectionObserver' in window) || reduceMotion) {
+    // no animation — everything visible immediately
+    revealAll();
+  } else {
+    revealTargets.forEach(function (el) { el.classList.add('reveal'); });
+
     var observer = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
-          // small stagger for a subtle cascade (capped low to avoid lag)
-          var el = entry.target;
-          var siblings = Array.prototype.slice.call(el.parentNode.children);
-          var idx = siblings.indexOf(el);
-          var delay = Math.min(idx, 4) * 45;
-          el.style.transitionDelay = delay + 'ms';
-          el.classList.add('visible');
-          observer.unobserve(el);
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
         }
       });
     }, {
       threshold: 0,
-      rootMargin: '0px 0px -12% 0px'
+      rootMargin: '0px 0px 0px 0px'
     });
+
     revealTargets.forEach(function (el) { observer.observe(el); });
-  } else {
-    revealTargets.forEach(function (el) { el.classList.add('visible'); });
+
+    // Reveal anything already in view on load right away
+    requestAnimationFrame(function () {
+      revealTargets.forEach(function (el) {
+        var r = el.getBoundingClientRect();
+        if (r.top < window.innerHeight && r.bottom > 0) el.classList.add('visible');
+      });
+    });
+
+    // Safety net: if anything is still hidden after 2.5s, reveal it so nothing stays blank
+    setTimeout(revealAll, 2500);
   }
 
   // ===== Contact form validation =====
