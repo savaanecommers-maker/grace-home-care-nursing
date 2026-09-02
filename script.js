@@ -36,9 +36,8 @@
   // ===== Hero typing effect (cycles through multiple phrases) =====
   var typedEl = document.getElementById('typed');
   var heroPrefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  // treat small screens / touch devices as "no heavy animation" to prevent flicker
-  var isMobile = window.matchMedia && window.matchMedia('(max-width: 820px)').matches;
-  var noAnim = heroPrefersReduced || isMobile;
+  // animations fully disabled site-wide for maximum stability across all devices
+  var noAnim = true;
 
   if (typedEl) {
     var phrases = [
@@ -277,19 +276,8 @@
     requestAnimationFrame(step);
   }
 
-  var prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  if ('IntersectionObserver' in window && !prefersReduced) {
-    var statObserver = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          animateCount(entry.target);
-          statObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.5 });
-    stats.forEach(function (el) { statObserver.observe(el); });
-  }
+  // stats count-up disabled — numbers show their final value statically
+  void animateCount;
 
   // ===== Gallery: build from asset list =====
   var galleryFiles = [

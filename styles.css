@@ -1161,3 +1161,18 @@ h1, h2, h3, h4 { font-family: 'Poppins', system-ui, sans-serif; line-height: 1.2
   .service-modal-footer { padding: 16px 22px 26px; }
   .service-modal-footer .btn { flex: 1; }
 }
+
+/* ============================================================
+   ANIMATIONS DISABLED SITE-WIDE (stability across all devices)
+   Keeps hover color changes usable but removes all motion,
+   transitions, and keyframe animations.
+   ============================================================ */
+*, *::before, *::after {
+  animation: none !important;
+  transition: none !important;
+}
+.reveal, .js-anim .reveal { opacity: 1 !important; transform: none !important; }
+.hero-copy > * { opacity: 1 !important; transform: none !important; }
+.type-caret { display: none !important; }
+.hero-quote { opacity: 1 !important; }
+html { scroll-behavior: auto !important; }
