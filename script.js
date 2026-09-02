@@ -410,15 +410,28 @@
     openServiceModal = null;
   }
 
-  // open triggers (buttons with data-modal)
+  function openModalById(id) {
+    var modal = document.getElementById(id);
+    if (!modal) return;
+    modal.classList.add('open');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    openServiceModal = modal;
+  }
+
+  // open triggers (any element with data-modal, incl. whole service cards)
   document.querySelectorAll('[data-modal]').forEach(function (trigger) {
-    trigger.addEventListener('click', function () {
-      var modal = document.getElementById(trigger.getAttribute('data-modal'));
-      if (!modal) return;
-      modal.classList.add('open');
-      modal.setAttribute('aria-hidden', 'false');
-      document.body.style.overflow = 'hidden';
-      openServiceModal = modal;
+    trigger.addEventListener('click', function (e) {
+      // if the click originated on a real link inside the card (e.g. external), let it work
+      if (e.target.closest('a[href]')) return;
+      openModalById(trigger.getAttribute('data-modal'));
+    });
+    // keyboard access for card-role buttons
+    trigger.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openModalById(trigger.getAttribute('data-modal'));
+      }
     });
   });
 
