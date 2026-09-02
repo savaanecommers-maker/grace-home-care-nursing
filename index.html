@@ -217,7 +217,7 @@
             </div>
             <h3>Nursing Care</h3>
             <p>Comprehensive nursing support from routine medical procedures to specialized treatments, delivered by qualified nurses.</p>
-            <a href="https://wa.me/916301052929" class="card-link" target="_blank" rel="noopener">Know More →</a>
+            <button type="button" class="card-link card-link--btn" data-modal="modal-nursing-care">Know More →</button>
           </article>
 
           <article class="card">
@@ -226,7 +226,7 @@
             </div>
             <h3>Care Taker</h3>
             <p>Carefully selected, extensively trained, and deeply compassionate caretakers who prioritize your comfort and well-being.</p>
-            <a href="https://wa.me/916301052929" class="card-link" target="_blank" rel="noopener">Know More →</a>
+            <button type="button" class="card-link card-link--btn" data-modal="modal-care-taker">Know More →</button>
           </article>
 
           <article class="card">
@@ -235,7 +235,7 @@
             </div>
             <h3>Pediatric Care</h3>
             <p>Compassionate care for children from infancy through adolescence, tailored to their unique developmental needs.</p>
-            <a href="https://wa.me/916301052929" class="card-link" target="_blank" rel="noopener">Know More →</a>
+            <button type="button" class="card-link card-link--btn" data-modal="modal-pediatric-care">Know More →</button>
           </article>
 
           <article class="card">
@@ -244,7 +244,7 @@
             </div>
             <h3>Old Age Care</h3>
             <p>Respectful, attentive elder care that honors the wisdom of age and goes far beyond mere assistance.</p>
-            <a href="https://wa.me/916301052929" class="card-link" target="_blank" rel="noopener">Know More →</a>
+            <button type="button" class="card-link card-link--btn" data-modal="modal-old-age-care">Know More →</button>
           </article>
 
           <article class="card">
@@ -253,7 +253,7 @@
             </div>
             <h3>Doctor Consultation</h3>
             <p>Expert doctors offering comprehensive consultation to address your health concerns with care and precision.</p>
-            <a href="https://wa.me/916301052929" class="card-link" target="_blank" rel="noopener">Know More →</a>
+            <button type="button" class="card-link card-link--btn" data-modal="modal-doctor-consultation">Know More →</button>
           </article>
 
           <article class="card">
@@ -262,7 +262,7 @@
             </div>
             <h3>Physiotherapy</h3>
             <p>Professional physiotherapy delivered at home for comfortable, effective rehabilitation and mobility recovery.</p>
-            <a href="https://wa.me/916301052929" class="card-link" target="_blank" rel="noopener">Know More →</a>
+            <button type="button" class="card-link card-link--btn" data-modal="modal-physiotherapy">Know More →</button>
           </article>
 
           <article class="card">
@@ -271,7 +271,7 @@
             </div>
             <h3>Post-Surgical Care</h3>
             <p>Attentive recovery support after surgery — wound care, dressing changes, and monitoring for a safe healing at home.</p>
-            <a href="https://wa.me/916301052929" class="card-link" target="_blank" rel="noopener">Know More →</a>
+            <button type="button" class="card-link card-link--btn" data-modal="modal-post-surgical">Know More →</button>
           </article>
 
           <article class="card">
@@ -280,7 +280,7 @@
             </div>
             <h3>Mother &amp; Baby Care</h3>
             <p>Postnatal support for new mothers and newborns, including feeding, hygiene, and recovery assistance.</p>
-            <a href="https://wa.me/916301052929" class="card-link" target="_blank" rel="noopener">Know More →</a>
+            <button type="button" class="card-link card-link--btn" data-modal="modal-mother-baby">Know More →</button>
           </article>
 
           <article class="card">
@@ -289,7 +289,7 @@
             </div>
             <h3>Palliative Care</h3>
             <p>Gentle, dignified comfort care for patients with serious or terminal illness, focused on quality of life.</p>
-            <a href="https://wa.me/916301052929" class="card-link" target="_blank" rel="noopener">Know More →</a>
+            <button type="button" class="card-link card-link--btn" data-modal="modal-palliative">Know More →</button>
           </article>
 
           <article class="card">
@@ -298,7 +298,7 @@
             </div>
             <h3>Lab Sample Collection</h3>
             <p>Convenient home collection of blood and diagnostic samples, with reports delivered to your doorstep.</p>
-            <a href="https://wa.me/916301052929" class="card-link" target="_blank" rel="noopener">Know More →</a>
+            <button type="button" class="card-link card-link--btn" data-modal="modal-lab-sample">Know More →</button>
           </article>
 
           <article class="card">
@@ -307,7 +307,7 @@
             </div>
             <h3>Medical Equipment</h3>
             <p>Rental and setup of home medical equipment — hospital beds, oxygen concentrators, wheelchairs, and more.</p>
-            <a href="https://wa.me/916301052929" class="card-link" target="_blank" rel="noopener">Know More →</a>
+            <button type="button" class="card-link card-link--btn" data-modal="modal-medical-equipment">Know More →</button>
           </article>
 
           <article class="card">
@@ -316,7 +316,7 @@
             </div>
             <h3>NRI Service</h3>
             <p>Living abroad? We care for your parents and loved ones back home with regular updates, so you stay connected and worry-free.</p>
-            <a href="https://wa.me/916301052929" class="card-link" target="_blank" rel="noopener">Know More →</a>
+            <button type="button" class="card-link card-link--btn" data-modal="modal-nri">Know More →</button>
           </article>
 
           <article class="card">
@@ -758,6 +758,106 @@
     <p class="lightbox-caption" id="lightboxCaption"></p>
   </div>
 
+  <!-- Service Modal: Nursing Care -->
+  <div class="service-modal" id="modal-nursing-care" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="service-modal-dialog">
+      <button class="service-modal-close" data-modal-close aria-label="Close">&times;</button>
+      <div class="service-modal-header">
+        <span class="service-modal-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></span>
+        <h3>Nursing Care</h3>
+      </div>
+      <div class="service-modal-body">
+        <p>Our <strong>skilled nursing care</strong> brings hospital-quality medical support into the comfort of your home, delivered by qualified and experienced nurses.</p>
+        <p class="service-modal-subhead">Our nursing services include:</p>
+        <ul class="service-modal-list">
+          <li><span class="sm-ico" aria-hidden="true">💉</span><div><strong>Injections &amp; IV Therapy</strong> — Administering medications, injections, and intravenous fluids safely.</div></li>
+          <li><span class="sm-ico" aria-hidden="true">🩹</span><div><strong>Wound &amp; Dressing Care</strong> — Cleaning, dressing, and monitoring wounds to prevent infection.</div></li>
+          <li><span class="sm-ico" aria-hidden="true">💊</span><div><strong>Medication Management</strong> — Ensuring the right medicines are taken at the right time.</div></li>
+          <li><span class="sm-ico" aria-hidden="true">📋</span><div><strong>Vitals Monitoring</strong> — Regular checks of blood pressure, sugar, temperature, and more.</div></li>
+        </ul>
+      </div>
+      <div class="service-modal-footer">
+        <a href="https://wa.me/916301052929" class="btn btn-whatsapp" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12 2a10 10 0 0 0-8.53 15.26L2 22l4.85-1.42A10 10 0 1 0 12 2z"/></svg>Enquire on WhatsApp</a>
+        <a href="tel:+916301052929" class="btn btn-ghost">Call Us</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Service Modal: Care Taker -->
+  <div class="service-modal" id="modal-care-taker" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="service-modal-dialog">
+      <button class="service-modal-close" data-modal-close aria-label="Close">&times;</button>
+      <div class="service-modal-header">
+        <span class="service-modal-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
+        <h3>Care Taker</h3>
+      </div>
+      <div class="service-modal-body">
+        <p>Our <strong>trained caretakers</strong> provide dedicated, round-the-clock support and companionship, treating your loved ones with warmth and respect.</p>
+        <p class="service-modal-subhead">What our caretakers provide:</p>
+        <ul class="service-modal-list">
+          <li><span class="sm-ico" aria-hidden="true">🤝</span><div><strong>Daily Living Support</strong> — Assistance with everyday tasks and routines.</div></li>
+          <li><span class="sm-ico" aria-hidden="true">🍲</span><div><strong>Meal Preparation &amp; Feeding</strong> — Nutritious meals prepared and served with care.</div></li>
+          <li><span class="sm-ico" aria-hidden="true">💬</span><div><strong>Companionship</strong> — Friendly company and emotional support throughout the day.</div></li>
+          <li><span class="sm-ico" aria-hidden="true">🕐</span><div><strong>24/7 Availability</strong> — Full-time or part-time caretakers as per your needs.</div></li>
+        </ul>
+      </div>
+      <div class="service-modal-footer">
+        <a href="https://wa.me/916301052929" class="btn btn-whatsapp" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12 2a10 10 0 0 0-8.53 15.26L2 22l4.85-1.42A10 10 0 1 0 12 2z"/></svg>Enquire on WhatsApp</a>
+        <a href="tel:+916301052929" class="btn btn-ghost">Call Us</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Service Modal: Pediatric Care -->
+  <div class="service-modal" id="modal-pediatric-care" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="service-modal-dialog">
+      <button class="service-modal-close" data-modal-close aria-label="Close">&times;</button>
+      <div class="service-modal-header">
+        <span class="service-modal-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/><path d="M17 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/><path d="M2 21v-2a4 4 0 0 1 4-4h6a4 4 0 0 1 4 4v2"/></svg></span>
+        <h3>Pediatric Care</h3>
+      </div>
+      <div class="service-modal-body">
+        <p>Specialized <strong>home care for children</strong> from infancy through adolescence, delivered by nurses trained in pediatric needs.</p>
+        <p class="service-modal-subhead">Our pediatric care covers:</p>
+        <ul class="service-modal-list">
+          <li><span class="sm-ico" aria-hidden="true">🍼</span><div><strong>Newborn &amp; Infant Care</strong> — Feeding, hygiene, and monitoring for the youngest patients.</div></li>
+          <li><span class="sm-ico" aria-hidden="true">💊</span><div><strong>Medication &amp; Treatment</strong> — Administering prescribed medicines and therapies safely.</div></li>
+          <li><span class="sm-ico" aria-hidden="true">🌡️</span><div><strong>Illness Recovery Support</strong> — Care during and after illness, at home.</div></li>
+          <li><span class="sm-ico" aria-hidden="true">📈</span><div><strong>Growth Monitoring</strong> — Tracking development and well-being.</div></li>
+        </ul>
+      </div>
+      <div class="service-modal-footer">
+        <a href="https://wa.me/916301052929" class="btn btn-whatsapp" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12 2a10 10 0 0 0-8.53 15.26L2 22l4.85-1.42A10 10 0 1 0 12 2z"/></svg>Enquire on WhatsApp</a>
+        <a href="tel:+916301052929" class="btn btn-ghost">Call Us</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Service Modal: Old Age Care -->
+  <div class="service-modal" id="modal-old-age-care" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="service-modal-dialog">
+      <button class="service-modal-close" data-modal-close aria-label="Close">&times;</button>
+      <div class="service-modal-header">
+        <span class="service-modal-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
+        <h3>Old Age Care</h3>
+      </div>
+      <div class="service-modal-body">
+        <p>Compassionate <strong>elderly care at home</strong> that preserves dignity, independence, and comfort for your ageing loved ones.</p>
+        <p class="service-modal-subhead">Our elderly care includes:</p>
+        <ul class="service-modal-list">
+          <li><span class="sm-ico" aria-hidden="true">🧓</span><div><strong>Daily Assistance</strong> — Help with bathing, dressing, mobility, and meals.</div></li>
+          <li><span class="sm-ico" aria-hidden="true">🧠</span><div><strong>Dementia &amp; Alzheimer's Care</strong> — Patient, specialized support for memory conditions.</div></li>
+          <li><span class="sm-ico" aria-hidden="true">💊</span><div><strong>Medication Reminders</strong> — Keeping medication schedules on track.</div></li>
+          <li><span class="sm-ico" aria-hidden="true">❤️</span><div><strong>Companionship</strong> — Emotional support and friendly company.</div></li>
+        </ul>
+      </div>
+      <div class="service-modal-footer">
+        <a href="https://wa.me/916301052929" class="btn btn-whatsapp" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12 2a10 10 0 0 0-8.53 15.26L2 22l4.85-1.42A10 10 0 1 0 12 2z"/></svg>Enquire on WhatsApp</a>
+        <a href="tel:+916301052929" class="btn btn-ghost">Call Us</a>
+      </div>
+    </div>
+  </div>
+
   <!-- Service Modal: Personal Care -->
   <div class="service-modal" id="modal-personal-care" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="pc-title">
     <div class="service-modal-dialog">
@@ -795,6 +895,206 @@
           <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12 2a10 10 0 0 0-8.53 15.26L2 22l4.85-1.42A10 10 0 1 0 12 2z"/></svg>
           Enquire on WhatsApp
         </a>
+        <a href="tel:+916301052929" class="btn btn-ghost">Call Us</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Service Modal: Doctor Consultation -->
+  <div class="service-modal" id="modal-doctor-consultation" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="service-modal-dialog">
+      <button class="service-modal-close" data-modal-close aria-label="Close">&times;</button>
+      <div class="service-modal-header">
+        <span class="service-modal-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.8 2.3A.3.3 0 1 0 5 2H4a2 2 0 0 0-2 2v5a6 6 0 0 0 6 6 6 6 0 0 0 6-6V4a2 2 0 0 0-2-2h-1a.2.2 0 1 0 .3.3"/><path d="M8 15a6 6 0 0 0 12 0v-4"/><circle cx="20" cy="10" r="2"/></svg></span>
+        <h3>Doctor Consultation</h3>
+      </div>
+      <div class="service-modal-body">
+        <p>Access <strong>expert medical advice at home</strong>. Our doctors provide consultations, follow-ups, and emergency physician support whenever you need it.</p>
+        <p class="service-modal-subhead">Consultation services include:</p>
+        <ul class="service-modal-list">
+          <li><span class="sm-ico" aria-hidden="true">🏠</span><div><strong>Home Visits</strong> — Doctors visit you at home for check-ups and diagnosis.</div></li>
+          <li><span class="sm-ico" aria-hidden="true">🚑</span><div><strong>Emergency Physician</strong> — Prompt medical support in urgent situations.</div></li>
+          <li><span class="sm-ico" aria-hidden="true">📝</span><div><strong>Treatment Planning</strong> — Personalized care plans and prescriptions.</div></li>
+          <li><span class="sm-ico" aria-hidden="true">🔁</span><div><strong>Regular Follow-ups</strong> — Ongoing monitoring of your health condition.</div></li>
+        </ul>
+      </div>
+      <div class="service-modal-footer">
+        <a href="https://wa.me/916301052929" class="btn btn-whatsapp" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12 2a10 10 0 0 0-8.53 15.26L2 22l4.85-1.42A10 10 0 1 0 12 2z"/></svg>Enquire on WhatsApp</a>
+        <a href="tel:+916301052929" class="btn btn-ghost">Call Us</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Service Modal: Physiotherapy -->
+  <div class="service-modal" id="modal-physiotherapy" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="service-modal-dialog">
+      <button class="service-modal-close" data-modal-close aria-label="Close">&times;</button>
+      <div class="service-modal-header">
+        <span class="service-modal-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2 5 4-10 2 5h6"/></svg></span>
+        <h3>Physiotherapy at Home</h3>
+      </div>
+      <div class="service-modal-body">
+        <p>Professional <strong>physiotherapy in the comfort of your home</strong>, helping you recover mobility, strength, and independence.</p>
+        <p class="service-modal-subhead">Our physiotherapy covers:</p>
+        <ul class="service-modal-list">
+          <li><span class="sm-ico" aria-hidden="true">🦴</span><div><strong>Post-Surgery Rehab</strong> — Recovery exercises after operations or injury.</div></li>
+          <li><span class="sm-ico" aria-hidden="true">🧘</span><div><strong>Mobility &amp; Strength</strong> — Restoring movement and muscle strength.</div></li>
+          <li><span class="sm-ico" aria-hidden="true">🩺</span><div><strong>Pain Management</strong> — Relief for joint, back, and muscle pain.</div></li>
+          <li><span class="sm-ico" aria-hidden="true">🧠</span><div><strong>Neuro Physiotherapy</strong> — Support for stroke and paralysis recovery.</div></li>
+        </ul>
+      </div>
+      <div class="service-modal-footer">
+        <a href="https://wa.me/916301052929" class="btn btn-whatsapp" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12 2a10 10 0 0 0-8.53 15.26L2 22l4.85-1.42A10 10 0 1 0 12 2z"/></svg>Enquire on WhatsApp</a>
+        <a href="tel:+916301052929" class="btn btn-ghost">Call Us</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Service Modal: Post-Surgical Care -->
+  <div class="service-modal" id="modal-post-surgical" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="service-modal-dialog">
+      <button class="service-modal-close" data-modal-close aria-label="Close">&times;</button>
+      <div class="service-modal-header">
+        <span class="service-modal-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2 5 4-10 2 5h6"/></svg></span>
+        <h3>Post-Surgical Care</h3>
+      </div>
+      <div class="service-modal-body">
+        <p>Safe, monitored <strong>recovery care after surgery</strong>, helping you heal comfortably at home and avoid complications.</p>
+        <p class="service-modal-subhead">Post-surgical support includes:</p>
+        <ul class="service-modal-list">
+          <li><span class="sm-ico" aria-hidden="true">🩹</span><div><strong>Wound &amp; Dressing Care</strong> — Sterile dressing changes and infection prevention.</div></li>
+          <li><span class="sm-ico" aria-hidden="true">💊</span><div><strong>Medication Management</strong> — Pain relief and prescribed medicines on schedule.</div></li>
+          <li><span class="sm-ico" aria-hidden="true">📋</span><div><strong>Vitals Monitoring</strong> — Tracking recovery progress closely.</div></li>
+          <li><span class="sm-ico" aria-hidden="true">🚶</span><div><strong>Mobility Support</strong> — Safe movement and rehabilitation guidance.</div></li>
+        </ul>
+      </div>
+      <div class="service-modal-footer">
+        <a href="https://wa.me/916301052929" class="btn btn-whatsapp" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12 2a10 10 0 0 0-8.53 15.26L2 22l4.85-1.42A10 10 0 1 0 12 2z"/></svg>Enquire on WhatsApp</a>
+        <a href="tel:+916301052929" class="btn btn-ghost">Call Us</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Service Modal: Mother & Baby Care -->
+  <div class="service-modal" id="modal-mother-baby" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="service-modal-dialog">
+      <button class="service-modal-close" data-modal-close aria-label="Close">&times;</button>
+      <div class="service-modal-header">
+        <span class="service-modal-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18M9 16l2 2 4-4"/></svg></span>
+        <h3>Mother &amp; Baby Care</h3>
+      </div>
+      <div class="service-modal-body">
+        <p>Dedicated <strong>postnatal care for new mothers and newborns</strong>, supporting recovery and healthy early development.</p>
+        <p class="service-modal-subhead">We provide:</p>
+        <ul class="service-modal-list">
+          <li><span class="sm-ico" aria-hidden="true">🤱</span><div><strong>Newborn Care</strong> — Feeding, bathing, and hygiene support for the baby.</div></li>
+          <li><span class="sm-ico" aria-hidden="true">💆</span><div><strong>Mother's Recovery</strong> — Postnatal care, massage, and wellness support.</div></li>
+          <li><span class="sm-ico" aria-hidden="true">🍲</span><div><strong>Nutrition Guidance</strong> — Healthy meals for mother and baby.</div></li>
+          <li><span class="sm-ico" aria-hidden="true">🌙</span><div><strong>Night Support</strong> — Assistance through the night as needed.</div></li>
+        </ul>
+      </div>
+      <div class="service-modal-footer">
+        <a href="https://wa.me/916301052929" class="btn btn-whatsapp" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12 2a10 10 0 0 0-8.53 15.26L2 22l4.85-1.42A10 10 0 1 0 12 2z"/></svg>Enquire on WhatsApp</a>
+        <a href="tel:+916301052929" class="btn btn-ghost">Call Us</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Service Modal: Palliative Care -->
+  <div class="service-modal" id="modal-palliative" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="service-modal-dialog">
+      <button class="service-modal-close" data-modal-close aria-label="Close">&times;</button>
+      <div class="service-modal-header">
+        <span class="service-modal-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></span>
+        <h3>Palliative Care</h3>
+      </div>
+      <div class="service-modal-body">
+        <p>Gentle, dignified <strong>comfort care for serious or terminal illness</strong>, focused entirely on quality of life and emotional support.</p>
+        <p class="service-modal-subhead">Palliative care includes:</p>
+        <ul class="service-modal-list">
+          <li><span class="sm-ico" aria-hidden="true">💊</span><div><strong>Pain &amp; Symptom Relief</strong> — Keeping the patient comfortable.</div></li>
+          <li><span class="sm-ico" aria-hidden="true">❤️</span><div><strong>Emotional Support</strong> — Compassionate care for patient and family.</div></li>
+          <li><span class="sm-ico" aria-hidden="true">🛏️</span><div><strong>Bedside Care</strong> — Full assistance with daily needs.</div></li>
+          <li><span class="sm-ico" aria-hidden="true">👨‍👩‍👧</span><div><strong>Family Guidance</strong> — Support and counselling for loved ones.</div></li>
+        </ul>
+      </div>
+      <div class="service-modal-footer">
+        <a href="https://wa.me/916301052929" class="btn btn-whatsapp" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12 2a10 10 0 0 0-8.53 15.26L2 22l4.85-1.42A10 10 0 1 0 12 2z"/></svg>Enquire on WhatsApp</a>
+        <a href="tel:+916301052929" class="btn btn-ghost">Call Us</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Service Modal: Lab Sample Collection -->
+  <div class="service-modal" id="modal-lab-sample" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="service-modal-dialog">
+      <button class="service-modal-close" data-modal-close aria-label="Close">&times;</button>
+      <div class="service-modal-header">
+        <span class="service-modal-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2h8M12 2v6M6 8h12l2 12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/></svg></span>
+        <h3>Lab Sample Collection</h3>
+      </div>
+      <div class="service-modal-body">
+        <p>Convenient <strong>home collection of lab samples</strong> — no need to visit a diagnostic centre. Reports delivered right to your doorstep.</p>
+        <p class="service-modal-subhead">Our lab services include:</p>
+        <ul class="service-modal-list">
+          <li><span class="sm-ico" aria-hidden="true">🩸</span><div><strong>Blood Sample Collection</strong> — Safe, hygienic collection at home.</div></li>
+          <li><span class="sm-ico" aria-hidden="true">🧪</span><div><strong>Diagnostic Tests</strong> — A wide range of routine and specialized tests.</div></li>
+          <li><span class="sm-ico" aria-hidden="true">📄</span><div><strong>Home Report Delivery</strong> — Digital and printed reports delivered to you.</div></li>
+          <li><span class="sm-ico" aria-hidden="true">⏱️</span><div><strong>Quick Turnaround</strong> — Fast, reliable results.</div></li>
+        </ul>
+      </div>
+      <div class="service-modal-footer">
+        <a href="https://wa.me/916301052929" class="btn btn-whatsapp" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12 2a10 10 0 0 0-8.53 15.26L2 22l4.85-1.42A10 10 0 1 0 12 2z"/></svg>Enquire on WhatsApp</a>
+        <a href="tel:+916301052929" class="btn btn-ghost">Call Us</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Service Modal: Medical Equipment -->
+  <div class="service-modal" id="modal-medical-equipment" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="service-modal-dialog">
+      <button class="service-modal-close" data-modal-close aria-label="Close">&times;</button>
+      <div class="service-modal-header">
+        <span class="service-modal-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4"/></svg></span>
+        <h3>Medical Equipment</h3>
+      </div>
+      <div class="service-modal-body">
+        <p>Rental and setup of <strong>home medical equipment</strong>, so you can create a safe, hospital-ready environment at home.</p>
+        <p class="service-modal-subhead">Available equipment:</p>
+        <ul class="service-modal-list">
+          <li><span class="sm-ico" aria-hidden="true">🛏️</span><div><strong>Hospital Beds</strong> — Adjustable beds for patient comfort and care.</div></li>
+          <li><span class="sm-ico" aria-hidden="true">🫁</span><div><strong>Oxygen Concentrators</strong> — Reliable oxygen support at home.</div></li>
+          <li><span class="sm-ico" aria-hidden="true">♿</span><div><strong>Wheelchairs &amp; Walkers</strong> — Mobility aids for independence.</div></li>
+          <li><span class="sm-ico" aria-hidden="true">🔧</span><div><strong>Setup &amp; Support</strong> — Delivery, installation, and guidance included.</div></li>
+        </ul>
+      </div>
+      <div class="service-modal-footer">
+        <a href="https://wa.me/916301052929" class="btn btn-whatsapp" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12 2a10 10 0 0 0-8.53 15.26L2 22l4.85-1.42A10 10 0 1 0 12 2z"/></svg>Enquire on WhatsApp</a>
+        <a href="tel:+916301052929" class="btn btn-ghost">Call Us</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Service Modal: NRI Service -->
+  <div class="service-modal" id="modal-nri" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="service-modal-dialog">
+      <button class="service-modal-close" data-modal-close aria-label="Close">&times;</button>
+      <div class="service-modal-header">
+        <span class="service-modal-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span>
+        <h3>NRI Service</h3>
+      </div>
+      <div class="service-modal-body">
+        <p>Living abroad? Our <strong>NRI care service</strong> lets you ensure your parents and loved ones back home receive the best care — while you stay informed and worry-free.</p>
+        <p class="service-modal-subhead">What we offer NRI families:</p>
+        <ul class="service-modal-list">
+          <li><span class="sm-ico" aria-hidden="true">👨‍⚕️</span><div><strong>Dedicated Care Manager</strong> — A single point of contact for your family.</div></li>
+          <li><span class="sm-ico" aria-hidden="true">📱</span><div><strong>Regular Updates</strong> — Photos, calls, and reports on your loved one's health.</div></li>
+          <li><span class="sm-ico" aria-hidden="true">🌍</span><div><strong>Remote Coordination</strong> — Arrange care from anywhere in the world.</div></li>
+          <li><span class="sm-ico" aria-hidden="true">🏥</span><div><strong>Hospital &amp; Emergency Help</strong> — Assistance with appointments and emergencies.</div></li>
+        </ul>
+      </div>
+      <div class="service-modal-footer">
+        <a href="https://wa.me/916301052929" class="btn btn-whatsapp" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12 2a10 10 0 0 0-8.53 15.26L2 22l4.85-1.42A10 10 0 1 0 12 2z"/></svg>Enquire on WhatsApp</a>
         <a href="tel:+916301052929" class="btn btn-ghost">Call Us</a>
       </div>
     </div>
