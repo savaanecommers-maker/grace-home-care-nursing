@@ -273,6 +273,7 @@ export const TESTIMONIALS = [
 ]
 
 export const GALLERY_FILES = [
+  'mla grace.jpeg', 'mla.jpeg',
   'ceo taking award.jpeg', 'home care nursing services.webp', 'care giving.webp',
   'Elederly care.jpeg', 'elderly care 2.jpeg', 'old age home care.webp',
   'personal care.webp', 'Icu setup.webp', 'grace home care services to the NRI.webp',
@@ -300,6 +301,8 @@ export const GALLERY_FILES = [
 ]
 
 const CAPTION_MAP = {
+  'mla grace': 'MLA Visit — Grace Home Care',
+  'mla': 'MLA Recognition',
   'ceo taking award': 'Chairman Receiving an Award',
   'Elederly care': 'Elderly Care',
   'elderly care 2': 'Elderly Care',
