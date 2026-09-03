@@ -1112,24 +1112,20 @@ h1, h2, h3, h4 {
 .lightbox {
   position: fixed; inset: 0;
   z-index: 200;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   background: rgba(10,30,30,.92);
   padding: 40px 20px;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity .3s ease;
 }
-.lightbox.open { opacity: 1; pointer-events: auto; }
+.lightbox.open {
+  display: flex;
+}
 .lightbox-img {
   max-width: 88vw; max-height: 82vh;
   border-radius: 12px;
   box-shadow: 0 20px 60px rgba(0,0,0,.5);
-  transform: scale(.96);
-  transition: transform .3s ease;
 }
-.lightbox.open .lightbox-img { transform: scale(1); }
 .lightbox-caption {
   position: absolute;
   bottom: 24px; left: 0; right: 0;
@@ -1167,17 +1163,14 @@ h1, h2, h3, h4 {
 .service-modal {
   position: fixed; inset: 0;
   z-index: 210;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   padding: 24px;
   background: rgba(10,30,30,.6);
   backdrop-filter: blur(4px);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity .3s ease;
 }
-.service-modal.open { opacity: 1; pointer-events: auto; }
+.service-modal.open { display: flex; }
 .service-modal-dialog {
   position: relative;
   width: 100%; max-width: 560px;
@@ -1186,10 +1179,7 @@ h1, h2, h3, h4 {
   background: #fff;
   border-radius: var(--radius-xl);
   box-shadow: 0 30px 70px rgba(0,0,0,.35);
-  transform: translateY(24px) scale(.97);
-  transition: transform .35s cubic-bezier(.2,.7,.3,1);
 }
-.service-modal.open .service-modal-dialog { transform: none; }
 .service-modal-close {
   position: absolute;
   top: 14px; right: 16px;
