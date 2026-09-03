@@ -740,19 +740,9 @@ h1, h2, h3, h4 { font-family: 'Poppins', system-ui, sans-serif; line-height: 1.2
    PREMIUM ENHANCEMENTS
    ============================================================ */
 
-/* --- Scroll progress bar --- */
-.scroll-progress {
-  position: fixed; top: 0; left: 0; height: 3px; width: 0%;
-  background: linear-gradient(90deg, var(--teal-500), var(--coral));
-  z-index: 100; transition: width .1s linear;
-}
+/* scroll progress bar removed */
 
-/* --- Header elevates on scroll --- */
-.site-header { transition: box-shadow .3s ease, background .3s ease; }
-.site-header.scrolled {
-  box-shadow: 0 6px 24px rgba(15, 76, 76, 0.08);
-  background: rgba(255,255,255,.97);
-}
+/* header scroll class removed */
 
 /* --- Floating action buttons --- */
 .fab {

@@ -205,44 +205,17 @@
     });
   }
 
-  // ===== Header shadow + scroll progress + back-to-top =====
-  var header = document.querySelector('.site-header');
-  var progress = document.getElementById('scrollProgress');
+  // ===== Back-to-top button only (no scroll progress, no header class change) =====
   var topBtn = document.getElementById('scrollTop');
 
-  var scrollTicking = false;
-  var lastScrolled = null;
-  var lastTop = null;
-
-  function updateScroll() {
-    scrollTicking = false;
-    var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    var docHeight = document.documentElement.scrollHeight - window.innerHeight;
-    var pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-
-    if (progress) progress.style.width = pct + '%';
-
-    var isScrolled = scrollTop > 10;
-    if (header && isScrolled !== lastScrolled) {
-      header.classList.toggle('scrolled', isScrolled);
-      lastScrolled = isScrolled;
-    }
-    var showTop = scrollTop > 500;
-    if (topBtn && showTop !== lastTop) {
-      topBtn.classList.toggle('show', showTop);
-      lastTop = showTop;
-    }
-  }
-
   function onScroll() {
-    if (!scrollTicking) {
-      scrollTicking = true;
-      window.requestAnimationFrame(updateScroll);
+    if (topBtn) {
+      var show = (window.pageYOffset || document.documentElement.scrollTop) > 500;
+      topBtn.classList.toggle('show', show);
     }
   }
 
   window.addEventListener('scroll', onScroll, { passive: true });
-  updateScroll();
 
   if (topBtn) {
     topBtn.addEventListener('click', function () {
