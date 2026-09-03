@@ -4,6 +4,7 @@ const SERVICES_LIST = [
   'Nursing Care','Care Taker','Pediatric Care','Old Age Care','Doctor Consultation',
   'Physiotherapy','Post-Surgical Care','Mother & Baby Care','Palliative Care',
   'Lab Sample Collection','Medical Equipment','Personal Care Services','NRI Service',
+  'Ambulance Service',
 ]
 
 export default function Footer() {

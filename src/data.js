@@ -192,6 +192,22 @@ export const SERVICES = [
     }
   },
   {
+    id: 'modal-ambulance',
+    icon: '<path d="M10 17H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v3"/><path d="M8 21h8"/><path d="M12 17v4"/><rect x="14" y="11" width="8" height="10" rx="1"/><path d="M18 11v-1a2 2 0 0 0-2-2h-1"/><path d="M18 15h.01"/><path d="M21 15h-6"/>',
+    title: 'Ambulance Service',
+    desc: '24/7 ambulance service for emergency and non-emergency medical transportation, ensuring safe and swift patient transfer.',
+    modalBody: {
+      intro: 'Our <strong>ambulance service</strong> provides rapid, reliable medical transportation for emergencies and planned transfers — available 24/7 across Visakhapatnam, Vijayawada, and Rajahmundry.',
+      subhead: 'Our ambulance services include:',
+      items: [
+        { icon: '🚨', title: 'Emergency Response', desc: 'Rapid dispatch for medical emergencies, available round the clock.' },
+        { icon: '🏥', title: 'Hospital Transfer', desc: 'Safe transfer between hospitals or from home to hospital.' },
+        { icon: '👨‍⚕️', title: 'Trained Paramedics', desc: 'Qualified paramedics and attendants onboard for patient safety.' },
+        { icon: '🩺', title: 'Basic Life Support', desc: 'Equipped with oxygen, stretcher, and first-aid essentials.' },
+      ]
+    }
+  },
+  {
     id: 'modal-personal-care',
     icon: '<path d="M12 2a3 3 0 0 1 3 3c0 1.5-1 2.5-1 4h-4c0-1.5-1-2.5-1-4a3 3 0 0 1 3-3z"/><path d="M9 9h6l1 5H8z"/><path d="M7 22a5 5 0 0 1 10 0"/>',
     title: 'Personal Care Services',
