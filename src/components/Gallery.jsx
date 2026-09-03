@@ -41,7 +41,7 @@ export default function Gallery() {
               <img
                 src={`/assets/${encodeURIComponent(file)}`}
                 alt={prettyCaption(file)}
-                loading="lazy"
+
               />
               <figcaption>{prettyCaption(file)}</figcaption>
             </figure>

@@ -7,7 +7,7 @@ export default function About() {
       <div className="container about-grid">
         <div className="about-visual">
           <div className="about-frame">
-            <img src="/assets/company office.jpeg" alt="Grace Home Care Nursing office" className="about-image" loading="lazy" />
+            <img src="/assets/company office.jpeg" alt="Grace Home Care Nursing office" className="about-image" />
             <div className="about-badge" aria-hidden="true">
               <span className="about-badge-num">{years}+</span>
               <span className="about-badge-label">Years of Care</span>

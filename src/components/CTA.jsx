@@ -28,7 +28,7 @@ export default function CTA() {
         </div>
         <div className="cta-visual">
           <div className="cta-photo">
-            <img src="/assets/company office.jpeg" alt="Grace Home Care Nursing company office" loading="lazy" />
+            <img src="/assets/company office.jpeg" alt="Grace Home Care Nursing company office" />
           </div>
         </div>
       </div>

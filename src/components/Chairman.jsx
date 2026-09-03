@@ -5,10 +5,10 @@ export default function Chairman() {
         <div className="chairman-card">
           <div className="chairman-media">
             <div className="chairman-avatar">
-              <img src="/assets/ceo .jpeg" alt="James Richard, Chairman of Grace Home Care Nursing" loading="lazy" />
+              <img src="/assets/ceo .jpeg" alt="James Richard, Chairman of Grace Home Care Nursing" />
             </div>
             <figure className="chairman-award">
-              <img src="/assets/ceo taking award.jpeg" alt="James Richard receiving an award" loading="lazy" />
+              <img src="/assets/ceo taking award.jpeg" alt="James Richard receiving an award" />
               <figcaption><span className="award-icon" aria-hidden="true">🏆</span> Award-Winning Care</figcaption>
             </figure>
           </div>
