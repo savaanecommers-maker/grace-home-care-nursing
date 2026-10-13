@@ -1166,10 +1166,9 @@ html { scroll-behavior: auto !important; }
     linear-gradient(180deg, #eef6f5, #f6faf9);
 }
 .nri-pricing-grid {
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 28px;
-  flex-wrap: wrap;
   margin-bottom: 28px;
 }
 .nri-plan-card {
@@ -1179,7 +1178,6 @@ html { scroll-behavior: auto !important; }
   border-radius: var(--radius-xl);
   padding: 40px 36px;
   width: 100%;
-  max-width: 400px;
   box-shadow: var(--card-shadow);
   display: flex;
   flex-direction: column;
@@ -1217,7 +1215,11 @@ html { scroll-behavior: auto !important; }
 .nri-plan-actions { display: flex; flex-direction: column; gap: 12px; }
 .nri-plan-actions .btn { width: 100%; justify-content: center; }
 .nri-pricing-note { text-align: center; font-size: .88rem; color: var(--slate); max-width: 560px; margin: 0 auto; }
+@media (max-width: 960px) {
+  .nri-pricing-grid { grid-template-columns: repeat(2, 1fr); }
+}
 @media (max-width: 540px) {
+  .nri-pricing-grid { grid-template-columns: 1fr; }
   .nri-plan-card { padding: 32px 24px; }
   .nri-plan-amount { font-size: 2.4rem; }
 }
