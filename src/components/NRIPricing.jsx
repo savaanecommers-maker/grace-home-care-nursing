@@ -30,6 +30,22 @@ const PLANS = [
       'Monthly care summary',
     ],
   },
+  {
+    name: 'Premium NRI Care',
+    price: '$115',
+    period: 'month',
+    inr: '₹9,999/month',
+    highlight: false,
+    badge: null,
+    features: [
+      '8 home visits per month',
+      'Dedicated family care coordinator',
+      'Hospital appointment coordination',
+      'Home safety & essential-needs checks',
+      'Weekly family reports',
+      'Priority scheduling',
+    ],
+  },
 ]
 
 export default function NRIPricing() {
