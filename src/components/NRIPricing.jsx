@@ -15,6 +15,21 @@ const PLANS = [
       'WhatsApp visit reports',
     ],
   },
+  {
+    name: 'Standard Family Care',
+    price: '$70',
+    period: 'month',
+    inr: '₹5,999/month',
+    highlight: true,
+    badge: 'Popular',
+    features: [
+      '4 home visits per month',
+      'Weekly family updates',
+      'Doctor appointment coordination',
+      'Grocery and medicine coordination',
+      'Monthly care summary',
+    ],
+  },
 ]
 
 export default function NRIPricing() {
