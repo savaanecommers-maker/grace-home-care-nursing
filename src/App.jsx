@@ -12,6 +12,7 @@ import CTA from './components/CTA.jsx'
 import Contact from './components/Contact.jsx'
 import Footer from './components/Footer.jsx'
 import FAB from './components/FAB.jsx'
+import NRIPricing from './components/NRIPricing.jsx'
 
 export default function App() {
   return (
@@ -25,6 +26,7 @@ export default function App() {
         <About />
         <Chairman />
         <WhyUs />
+        <NRIPricing />
         <Gallery />
         <Testimonials />
         <CTA />

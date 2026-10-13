@@ -1476,3 +1476,132 @@ h1, h2, h3, h4 {
     animation-duration: .01ms !important;
   }
 }
+
+/* ===== NRI Pricing Section ===== */
+.nri-pricing-section {
+  background:
+    radial-gradient(700px 340px at 100% 0%, rgba(27,163,155,.08), transparent 60%),
+    linear-gradient(180deg, #eef6f5, #f6faf9);
+}
+.nri-pricing-grid {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  flex-wrap: wrap;
+  margin-bottom: 28px;
+}
+.nri-plan-card {
+  position: relative;
+  background: #fff;
+  border: 2px solid var(--card-border);
+  border-radius: var(--radius-xl);
+  padding: 40px 36px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: var(--card-shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+.nri-plan-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--card-shadow-hover);
+}
+.nri-plan-card--featured {
+  border-color: var(--teal-500);
+  box-shadow: 0 8px 32px rgba(27,163,155,.18);
+}
+.nri-plan-badge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, var(--teal-500), var(--teal-700));
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: .8rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  padding: 6px 20px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.nri-plan-header { text-align: center; }
+.nri-plan-name {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--teal-900);
+  margin-bottom: 16px;
+}
+.nri-plan-price {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 4px;
+  margin-bottom: 6px;
+}
+.nri-plan-amount {
+  font-family: 'Poppins', sans-serif;
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--teal-700);
+  line-height: 1;
+}
+.nri-plan-period {
+  font-size: 1rem;
+  color: var(--slate);
+  font-weight: 500;
+}
+.nri-plan-inr {
+  font-size: .95rem;
+  color: var(--slate);
+  font-weight: 600;
+}
+.nri-plan-features {
+  display: grid;
+  gap: 14px;
+}
+.nri-plan-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: .97rem;
+  color: var(--ink);
+  font-weight: 500;
+}
+.nri-plan-check {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  background: var(--teal-50);
+  color: var(--teal-700);
+  font-size: .75rem;
+  font-weight: 800;
+  margin-top: 1px;
+}
+.nri-plan-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.nri-plan-actions .btn {
+  width: 100%;
+  justify-content: center;
+}
+.nri-pricing-note {
+  text-align: center;
+  font-size: .88rem;
+  color: var(--slate);
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+@media (max-width: 540px) {
+  .nri-plan-card { padding: 32px 24px; }
+  .nri-plan-amount { font-size: 2.4rem; }
+}
