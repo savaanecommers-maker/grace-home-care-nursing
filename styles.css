@@ -650,6 +650,7 @@ h1, h2, h3, h4 { font-family: 'Poppins', system-ui, sans-serif; line-height: 1.2
   font-size: .86rem;
 }
 .footer-legal a:hover { color: #fff; }
+.footer-dev { font-size: .82rem; color: rgba(255,255,255,.45); width: 100%; text-align: center; margin-top: 6px; }
 
 /* ===== Responsive ===== */
 @media (max-width: 960px) {
