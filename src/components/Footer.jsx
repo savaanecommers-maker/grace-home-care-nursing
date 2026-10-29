@@ -97,6 +97,7 @@ export default function Footer() {
         <p className="footer-legal">
           <a href="#top">Terms of Service</a> · <a href="#top">Privacy Policy</a> · <a href="#top">Legal</a>
         </p>
+        <p className="footer-dev">Developed by Ch.Nookaraju</p>
       </div>
     </footer>
   )

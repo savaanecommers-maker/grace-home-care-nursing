@@ -1083,6 +1083,7 @@ h1, h2, h3, h4 {
   font-size: .86rem;
 }
 .footer-legal a:hover { color: #fff; }
+.footer-dev { font-size: .82rem; color: rgba(255,255,255,.45); width: 100%; text-align: center; margin-top: 6px; }
 
 /* ===== Floating Action Buttons ===== */
 .fab {
